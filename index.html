@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>全球发电站分布</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/leaflet.css">
+    <link rel="stylesheet" href="CSS/MarkerCluster.css">
+    <link rel="stylesheet" href="CSS/MarkerCluster.Default.css">
+
+    <script src="JS/leaflet.js"></script>
+    <script src="JS/leaflet.ChineseTmsProviders.js"></script>
+    <script src="JS/jquery-3.7.1.js"></script>
+    <script src="JS/leaflet.geocsv.js"></script>
+    <script src="JS/leaflet.markercluster-src.js"></script>
+    <script src="JS/papaparse.js"></script>
+    <script src="JS/turf.min.js"></script>
+    <script src="JS/d3.js"></script>
+  </head>
+
+  
+  <body>
+    <div id="container">
+      <div id="side-bar">
+        <div id="side-bar-toggle">
+
+        </div>
+        <div id="links-container">
+          <div class="selector-menu" id="selector_menu_1">
+            <select id="selector1">
+              <option value="Allcountries" selected>All</option>
+            </select>
+          </div>
+          <div class="selector-menu" id="selector_menu_2">
+            <select id="selector2">
+              <option value="Alltypes" selected>All types</option>
+              <option value="Lowcarbon">Low Carbon</option>
+              <option value="Highcarbon">High Carbon</option>
+            </select>
+          </div>
+          <div class="selector-menu" id="selector_menu_3">
+            <select id="selector3">
+              <option value="NASAGIBS_ViirsEarthAtNight2012">Satellite image night</option>
+              <option value="TianDiTu_Normal">TianDitu Normal Map</option>
+              <option value="TianDiTu_Satellite">TianDitu Satellite Day</option>
+              <option value="Google_Normal">Google Normal Map</option>
+              <option value="Google_Staellite">Google Satellite Day</option>
+            </select>
+          </div>
+        </div>
+        <div id="title-wrapper">
+        </div>
+        <div id="subtitle-wrapper">
+          <h1 id="title">全球发电站分布</h1>
+          <h1 id="subtitle">AllCountry</h1>
+          <p>
+            <span class="total" id="total">5706975.447256999</span>
+            <span class="total" id="total-label">MW</span>
+          </p>
+        </div>
+        <div id="chart-1"></div>
+        <div id="chart-2"></div>
+        <div id="key-desktop">
+          <div id="key-lable">
+            <div id="key-title">
+              <h3>容量</h3>
+            </div>
+            <div id="key-wrapper">
+              <div class="key-lable">
+                <p>12800 MW</p>
+              </div>
+              <div class="key-image">
+                <img src="Assets/legend.png" alt="map key">
+              </div>
+              <div class="key-lable"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map-wrapper">
+        <div id="mapid"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="main.js"></script>
+</html>
