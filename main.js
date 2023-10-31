@@ -190,6 +190,21 @@ const map = L.map('mapid', {
     zoomControl: false,
 });
 
+//创建比例尺控件
+L.control.scale({
+    metric : true,
+    imperial: false,
+    position: 'bottomright'
+}).addTo(map);
+
+//创建缩放控件
+L.control.zoom({
+    zoomInTitle: '放大',
+    zoomOutTitle: '缩小',
+    position: 'bottomright' 
+}).addTo(map);
+
+
 //添加图层图底
 const TianDiTu_NormalCanvas = L.tileLayer.chinaProvider('TianDiTu.Normal.Map', {
     key: '21ab8645b7a4e33db43a3766d94eef14',
@@ -356,7 +371,7 @@ function filterType(selectedType) {
             return LowcarbonNames;
         case "Highcarbon":
             return HighcarbonNames;
-        default:
+        default:v   
             return [selectedType];
     }
 }
@@ -801,8 +816,9 @@ function initialDraw(state) {
         })
 }
 
+//响应事件，根据选择国家绘制图表
 d3.select("#selector1").on("change", selectState)
-
+//相应函数
 function selectState() {
 
     var state = this.options[this.selectedIndex].value;
